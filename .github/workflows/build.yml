@@ -13,6 +13,7 @@ on:
       - 'todo-list/src/**'
 
 jobs:
+
   checkstyle:
     permissions: write-all
 
@@ -29,6 +30,9 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           level: warning
+      
+      - name: Codeball AI Code Review
+        uses: sturdy-dev/codeball-action@v2.6.0
 
   build:
     permissions: read
